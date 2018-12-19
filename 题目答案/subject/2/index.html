@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <title>题⽬2</title>
+</head>
+<body>
+<fieldset>
+    <legend ><h2>题⽬2:</h2></legend>
+
+    <p>请输入⼀个整数N（N <= 10000）：</p>
+    <input id="n">
+    <button type="button" id="submit">提交</button>
+    <p id="msg"></p>
+</fieldset>
+<script>
+    $("#submit").click(function () {
+        var data = {
+            'n': $("#n").val(),
+        };
+        $.post("index.php", data, function (d) {
+            $("#msg").html(d);
+        })
+    })
+</script>
+</body>
+</html>
